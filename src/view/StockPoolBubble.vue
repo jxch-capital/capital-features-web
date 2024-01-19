@@ -11,7 +11,7 @@ function getBackGroundColor(value) {
 
 const option = ref({
   grid: {
-    left: '0%',
+    left: '2%',
   },
   tooltip: {
     formatter: function (params) {
