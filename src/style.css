@@ -77,3 +77,8 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.n-input-number {
+  text-align: left;
+  max-width: 140px;
+}

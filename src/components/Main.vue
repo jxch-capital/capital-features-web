@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {ref} from 'vue'
-import { darkTheme } from 'naive-ui'
+import {darkTheme, lightTheme} from 'naive-ui'
 import {routes} from '../router'
 import {useRouter} from "vue-router";
 

@@ -1,9 +1,8 @@
 import {createRouter, createWebHistory} from 'vue-router'
 import {h, Component} from 'vue'
 import {NIcon} from 'naive-ui'
-import {
-    BookOutline
-} from '@vicons/ionicons5'
+import {HeatMap03, ChartBubble} from '@vicons/carbon'
+import {AttachMoneyFilled} from '@vicons/material'
 
 function renderIcon(icon: Component) {
     return () => h(NIcon, null, {default: () => h(icon)})
@@ -11,12 +10,26 @@ function renderIcon(icon: Component) {
 
 export const routes = [
     {
-        path: '/pa-practice',
-        label: "价格行为练习",
-        name: 'pa-practice',
-        key: 'pa-practice',
-        icon: renderIcon(BookOutline),
-        component: () => import('../components/HelloWorld.vue'),
+        path: '/',
+        label: "About",
+        name: 'about',
+        redirect: '/stock-pool-bubble',
+        icon: renderIcon(AttachMoneyFilled),
+        component: () => import('../view/About.vue'),
+    }, {
+        path: '/stock-pool-bubble',
+        label: "市场气泡图",
+        name: 'stock-pool-bubble',
+        key: 'stock-pool-bubble',
+        icon: renderIcon(ChartBubble),
+        component: () => import('../view/StockPoolBubble.vue'),
+    }, {
+        path: '/market-heatmap',
+        label: "市场热力图",
+        name: 'market-heatmap',
+        key: 'market-heatmap',
+        icon: renderIcon(HeatMap03),
+        component: () => import('../view/MarketHeatmap.vue'),
     }
 ]
 

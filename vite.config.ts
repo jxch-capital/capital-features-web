@@ -25,5 +25,14 @@ export default defineConfig({
         Components({
             resolvers: [NaiveUiResolver()]
         })
-    ]
+    ],
+    server: {
+        proxy: {
+            '/dev': {
+                target: 'http://localhost:18088',
+                changeOrigin: true,
+                rewrite: (path) => path.replace(/^\/dev/, '')
+            }
+        }
+    },
 })
